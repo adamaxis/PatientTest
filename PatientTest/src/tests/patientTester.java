@@ -1,9 +1,8 @@
 package tests;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import patientTester.Patient;
 import patientTester.PatientLogic;
@@ -14,11 +13,12 @@ public class patientTester {
 	
 	@Before
 	public void setUp() throws Exception {
+		tPatient.setWeight(180.0); // 180 lbs
+		tPatient.setHeight(72.0); // 6'0
 	}
 	
 	@Test
 	public void testConvertWeightToKg() {
-		tPatient.setWeight(180.0); // 180 lbs
 		double kg = patientInfo.convertWeightToKg(tPatient);
 		// check object integrity
 		assertNotNull(tPatient);
@@ -28,7 +28,6 @@ public class patientTester {
 	
 	@Test
 	public void testConvertHeightToCm() {
-		tPatient.setHeight(72.0); // 6'0
 		double cm = patientInfo.convertHeightToCm(tPatient);
 		// check object integrity
 		assertNotNull(tPatient);
@@ -38,8 +37,6 @@ public class patientTester {
 	
 	@Test
 	public void testCalculateBMI() {
-		tPatient.setWeight(180.0); // 180 lbs
-		tPatient.setHeight(72.0); // 6'0
 		double bmi = patientInfo.calculateBMI(tPatient);
 		// check object integrity
 		assertNotNull(tPatient);
